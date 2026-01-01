@@ -1,0 +1,58 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center w-75">
+    <div class="col-12 col-md-10 col-lg-8 col-xl-8 col-xxl-8">
+
+      <div class="content mb-4">
+        <div class=" my-4 mx-4">
+
+          <h3 class="card-title mb-4 text-center">
+            <%= typeof postId !== "undefined" ? "Edit Post" : "Create New Post" %>
+          </h3>
+
+          <form
+            action="<%= typeof postId !== 'undefined' ? `/update/${postId}` : '/save' %>"
+            method="POST"
+          >
+
+            <div class="mb-3">
+              <label class="form-label">Title</label>
+              <input
+                type="text"
+                name="title"
+                class="form-control"
+                placeholder="Enter post title"
+                value="<%= typeof title !== 'undefined' ? title : '' %>"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Content</label>
+              <textarea
+                name="content"
+                rows="6"
+                class="form-control"
+                placeholder="Write your post here..."
+                required
+              ><%= typeof content !== 'undefined' ? content : '' %></textarea>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <a href="/" class="btn btn-secondary">Cancel</a>
+              <button type="submit" class="btn btn-primary">
+                <%= typeof postId !== "undefined" ? "Update Post" : "Publish Post" %>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

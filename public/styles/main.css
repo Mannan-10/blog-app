@@ -1,0 +1,36 @@
+body {
+    font-family: 'open-sans', sans-serif;
+    min-height: 100vh;
+    background: #A27B5C;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #2C3930;
+}
+
+footer {
+    background: #3F4F44;
+    margin-top: auto;
+    min-height: 60px;
+}
+
+.container {
+    display: flex;
+}
+
+.content {
+    background: #DCD7C9;
+    border-radius: 35px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-btn {
+    border: none;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
